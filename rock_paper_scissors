@@ -1,0 +1,63 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+import random
+user_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+computer_input = random.randint(0,2)
+
+
+if user_input == computer_input:
+  print("equal scores")
+else:
+  if user_input == 0:
+    if computer_input == 1:
+      print("you lose")
+    else:
+      print("you win")
+  elif user_input == 1:
+    if computer_input == 0:
+      print("you win")
+    else:
+      print("you lose")
+  else:
+    if computer_input == 1:
+      print("you win")
+    else:
+      print("you lose")
+
+  
+
+if computer_input == 0:
+  print(f"your enemy choose rock")
+elif computer_input == 1:
+  print(f"your enemy choose paper")
+else:
+  print(f"your enemy choose scissors")
+  
+    
+  
