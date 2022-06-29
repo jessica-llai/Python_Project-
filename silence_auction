@@ -1,0 +1,38 @@
+from art import logo 
+from replit import clear
+#HINT: You can call clear() to clear the output in the console.
+print(logo)
+bid_record = {}
+stop = False
+
+def highest_bidder(bid_record):
+  offer = 0
+  for bidder in bid_record:
+    bid_amount = bid_record[bidder]
+    if  bid_amount  > offer:
+      offer = bid_amount
+      winner = bidder
+  print(f"The highest bid is $ {offer} by {winner}")
+    
+
+while not stop:
+  name = input("what's your name")
+  bid = int(input("what's your bid price $"))
+  bid_record[name]=bid
+  again = input("are there more bidder? yes or no")
+  if again == "no":
+    stop = True
+    highest_bidder(bid_record) 
+  clear()
+  
+     
+
+  
+ 
+
+  
+
+
+
+
+  
