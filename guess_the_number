@@ -1,0 +1,45 @@
+
+
+import random 
+import clear
+
+def game():
+  print(logo)
+  
+  print("Welcome to the number game.")
+  mode = input("please choose a level: easy or hard?")
+  
+  actual_num = random.randint(1,101)
+   
+  times = 0 
+  if mode =="hard":
+    loop = 5
+  else:
+    loop = 10
+    
+    
+  while times < loop:
+    
+    attempt1 = int(input("please guess a number between 1-100"))
+  
+    def compare(attempt, actual):
+      if attempt > actual:
+        return "too high"
+      elif attempt < actual:
+        return "too low"
+      elif attempt == actual:
+        return f"the number is {actual}, you're right!"
+    
+    print(compare(attempt1, actual_num))
+    times += 1 
+    loop_remain = loop - times
+    print(f"you can try {loop_remain} times")
+  print("game over, you failed")
+    
+again = input("Do you want to replay the game? type 'y' to continue, type 'no' to end the game")
+if again == "y":
+  game()
+  clear()
+elif again == "n":
+  print("Bye!")
+  
