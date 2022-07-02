@@ -1,0 +1,80 @@
+
+import random 
+import clear
+end_game = True
+
+
+def get_account():
+  account = random.choice(data)
+  return account 
+
+def format_data(account):   
+    name = account['name']
+    description = account['description']
+    country = account['country']
+    return f"{name}, a {description}, from {country}"
+  
+ 
+def game():
+  
+    print(logo)
+    print(f"Whose account has more instagram followers?")
+    
+    a = get_account()
+    b = get_account()
+    if a == b:
+      b = get_account()
+    print("a." + format_data(a))
+    print("b." + format_data(b))
+    follower_a = a['follower_count']
+    follower_b = b['follower_count']
+
+    choice = input("a or b")
+    score = 0
+    if choice == "a":
+      if follower_a > follower_b:    
+        score += 1
+
+      else:
+        end_game = False
+        print(f"Wrong. Game Over.")
+        again = input("Do you want to replay the game? y or n")
+        if again == "y":
+          clear()
+          game()
+        
+    if choice == "b":
+      if follower_a < follower_b:
+        score = 0
+        score += 1
+        
+      else:
+        end_game = False
+        print(f"Wrong. Game Over.")
+        again = input("Do you want to replay the game? y or n")
+        if again == "y":
+          clear()
+          game()
+    print(f"Right. Score: {score}")
+        
+while end_game: 
+  game()      
+
+        
+  
+  
+
+
+      
+      
+
+
+  
+
+
+  
+
+
+
+
+
